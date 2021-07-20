@@ -8,6 +8,14 @@ None.
 
 ## Role Variables
 
+ - use_classyllama_autoupdate: true
+ - use_classyllama_autoupdate_upgrade_type: minimal-security
+ - use_classyllama_autoupdate_download_updates: true
+ - use_classyllama_autoupdate_apply_updates: true
+ - use_classyllama_autoupdate_random_sleep: 60
+ - use_classyllama_autoupdate_notify:  true
+ - use_classyllama_autoupdate_email_to: yuriysklyarenko@classyllama.com
+
 See `defaults/main.yml` for details.
 
 ## Dependencies
@@ -18,7 +26,7 @@ None.
 
     - hosts: all
       roles:
-        - { role: classyllama.autoupdate, tags: autoupdate }
+         - { role: classyllama.autoupdate, tags: autoupdate, when: use_classyllama_autoupdate | default(false) }
 
 ## Notes
 
