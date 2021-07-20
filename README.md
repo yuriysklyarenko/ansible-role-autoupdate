@@ -24,12 +24,12 @@ None.
 
 The following update types are supported:
 
-# default                            = dnf upgrade
-# security                           = dnf --security upgrade
-# security-severity:Critical         = dnf --sec-severity=Critical upgrade
-# minimal                            = dnf --bugfix upgrade-minimal
-# minimal-security                   = dnf --security upgrade-minimal
-# minimal-security-severity:Critical = dnf --sec-severity=Critical upgrade-minimal
+  - default                            = dnf upgrade
+  - security                           = dnf --security upgrade
+  - security-severity:Critical         = dnf --sec-severity=Critical upgrade
+  - minimal                            = dnf --bugfix upgrade-minimal
+  - minimal-security                   = dnf --security upgrade-minimal
+  - minimal-security-severity:Critical = dnf --sec-severity=Critical upgrade-minimal
 
 with 'minimal-security' as a default type to install only security updates automatically.
 
