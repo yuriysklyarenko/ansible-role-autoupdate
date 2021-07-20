@@ -16,10 +16,20 @@ random_sleep = {{ use_classyllama_autoupdate_random_sleep }}
 update_messages = {{ use_classyllama_autoupdate_notify }}
 
 [emitters]
-system_name = {{  use_classyllama_autoupdate_system_name }}
-emit_via = email
-output_width = 80
+emit_via = stdio
+system_name = {{ use_classyllama_autoupdate_system_name }}
+
+[command]
+command_format = cat
+stdin_format = "{body}"
+
+[command_email]
+command_format = mail -s "DNF Auto update notification" -r {email_from} {email_to}
+stdin_format = "{body}"
+email_from = root@{{ use_classyllama_autoupdate_system_name }}
+email_to = {{ use_classyllama_autoupdate_email_to }}
 
 [email]
 email_from = root@{{ use_classyllama_autoupdate_system_name }}
 email_to = {{ use_classyllama_autoupdate_email_to }}
+email_host = localhost
