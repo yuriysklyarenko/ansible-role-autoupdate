@@ -12,7 +12,6 @@
     owner: root
     group: root
     mode: 0644
-  notify: restart yum-cron
 
 - name: start and enable systemd timer for dnf-automatic
   service:
