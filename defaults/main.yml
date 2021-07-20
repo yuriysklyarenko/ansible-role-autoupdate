@@ -1,0 +1,15 @@
+---
+use_classyllama_autoupdate: false
+use_classyllama_autoupdate_system_name: "{{ inventory_hostname }}"
+# default                            = dnf upgrade
+# security                           = dnf --security upgrade
+# security-severity:Critical         = dnf --sec-severity=Critical upgrade
+# minimal                            = dnf --bugfix upgrade-minimal
+# minimal-security                   = dnf --security upgrade-minimal
+# minimal-security-severity:Critical = dnf --sec-severity=Critical upgrade-minimal
+use_classyllama_autoupdate_upgrade_type: minimal-security
+use_classyllama_autoupdate_download_updates: false
+use_classyllama_autoupdate_apply_updates: false
+use_classyllama_autoupdate_random_sleep: 60
+use_classyllama_autoupdate_notify: false
+use_classyllama_autoupdate_email_to: root@{{ inventory_hostname }}

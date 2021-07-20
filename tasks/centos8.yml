@@ -1,0 +1,21 @@
+---
+
+- name: install dnf-automatic
+  package:
+    name: dnf-automatic
+    state: present
+
+- name: configure dnf-automatic
+  template:
+    src: automatic.conf.j2
+    dest: /etc/dnf/automatic.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart yum-cron
+
+- name: start and enable systemd timer for dnf-automatic
+  service:
+    name: dnf-automatic-install.timer
+    state: started
+    enabled: yes

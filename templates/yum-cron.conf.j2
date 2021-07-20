@@ -1,0 +1,25 @@
+# {{ ansible_managed }}
+
+[commands]
+#  What kind of update to use:
+# default                            = yum upgrade
+# security                           = yum --security upgrade
+# security-severity:Critical         = yum --sec-severity=Critical upgrade
+# minimal                            = yum --bugfix upgrade-minimal
+# minimal-security                   = yum --security upgrade-minimal
+# minimal-security-severity:Critical =  --sec-severity=Critical upgrade-minimal
+
+update_cmd = {{ use_classyllama_autoupdate_upgrade_type }}
+download_updates = {{ use_classyllama_autoupdate_download_updates }}
+apply_updates = {{ use_classyllama_autoupdate_apply_updates }}
+random_sleep = {{ use_classyllama_autoupdate_random_sleep }}
+update_messages = {{ use_classyllama_autoupdate_notify }}
+
+[emitters]
+system_name = {{  use_classyllama_autoupdate_system_name }}
+emit_via = email
+output_width = 80
+
+[email]
+email_from = root@{{ use_classyllama_autoupdate_system_name }}
+email_to = {{ use_classyllama_autoupdate_email_to }}
