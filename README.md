@@ -14,7 +14,7 @@ None.
  - use_classyllama_autoupdate_apply_updates: true
  - use_classyllama_autoupdate_random_sleep: 60
  - use_classyllama_autoupdate_notify:  true
- - use_classyllama_autoupdate_email_to: yuriysklyarenko@classyllama.com
+ - use_classyllama_autoupdate_email_to: your@email.com
 
 See `defaults/main.yml` for details.
 
