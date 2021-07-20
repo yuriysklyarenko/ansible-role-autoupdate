@@ -1,7 +1,7 @@
 ---
 
 - name: install dnf-automatic
-  package:
+  dnf:
     name: dnf-automatic
     state: present
 
@@ -16,6 +16,6 @@
 
 - name: start and enable systemd timer for dnf-automatic
   service:
-    name: dnf-automatic-install.timer
+    name: dnf-automatic.timer
     state: started
     enabled: yes
