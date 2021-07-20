@@ -19,3 +19,4 @@
     name: dnf-automatic.timer
     state: started
     enabled: yes
+  when: not ansible_check_mode
